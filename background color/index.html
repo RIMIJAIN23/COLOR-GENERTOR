@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0px;
+         padding: 0px;
+    }
+    #bodybg{
+        width: 100%;
+         height: 100vh;
+          background:linear-gradient(to right,red,yellow);
+          position: relative;
+    }
+#center{
+    position: absolute;
+    top:30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+     text-align: center;
+}
+ h1{
+     font-size: 60px;
+ }
+</style>
+<body id="bodybg">
+    <div id="center">
+        <h1><i>Background Color Generator</i></h1>
+        <br><br>
+        <h2> <i>Pice the color</i></h2>
+        <br><br>
+        <input type="color" id="colorone" value="#665A65">
+        <input type="color" id="colortwo" value="#457B45">
+        <br><br>
+    <h3></h3></div>
+     <script>
+        const colorone=document.getElementById('colorone');
+
+        const colortwo=document.getElementById('colortwo');
+        const bodybg=document.getElementById('bodybg');
+        function setbackgroundcolo(){
+            bodybg.style.background=
+            `linear-gradient(to right,${colorone.value},${colortwo.value})`;
+        }
+         colorone.addEventListener('input',setbackgroundcolo)
+           
+         colortwo.addEventListener('input', setbackgroundcolo)
+            
+     </script>
+</body>
+</html>
